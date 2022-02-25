@@ -1,0 +1,94 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>GADGET STORE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+  .background{
+    height:100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+  .imgover{
+    height:400px;
+    width:600px;
+  }
+</style>
+
+</head>
+<body id="top">
+
+  <!-- ################################################################################################ -->
+  <div class="bgded overlay" style="background-image:url({% static 'hm/images/demo/backgrounds/background.jpg' %});">
+
+  <div id="pageintro" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">ONLINE ELECTRONIC STORE</h3>
+      <p>Think advance with us!!</p>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <section id="introblocks">
+      <ul class="nospace group btmspace-80">
+      {% for i in pg.object_list %}
+        <li class="one_third">
+          <figure><a class="imgover" href={{i.get_url}}><img src="{{i.img.url}}" alt=""></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>Brand:{{i.brand}}</p>
+              <p>{{i.desc|truncatechars:50}}</p>
+              <h2>AED {{i.price}}</h2>
+            </figcaption>
+          </figure>
+        </li>
+      {% endfor %}
+        
+      </ul>
+    </section>
+    <center>
+      {% for p in pg.paginator.page_range %}
+      <a href="?page={{p}}" class="btn btn-light btn-sm {% if pg.number == p %} active {% endif %}">{{p}}</a>
+      {% endfor %}
+    </center>
+    <!-- ################################################################################################ -->
+    <hr class="btmspace-80">
+    <!-- ################################################################################################ -->
+    
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{% static 'hm/layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'hm/layout/scripts/jquery.mobilemenu.js' %}"></script>
+{% endblock %}
+
+</body>
+</html> -->
